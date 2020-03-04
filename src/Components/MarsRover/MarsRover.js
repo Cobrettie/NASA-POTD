@@ -1,18 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function MarsRover() {
+  const [latestPhotos, setLatestPhotos] = useState();
+
   useEffect(() => {
     axios
-      .get('https://api.nasa.gov/mars-photos/')
+      .get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8')
       .then(response => {
-        console.log(response);
+        console.log(response)
+        setLatestPhotos(response.data.latest_photos[0].img_src);
       })
-  })
-  
+  }, [])
+
   return (
     <div>
       <h1>Mars Rover Photos</h1>
+      <img src={latestPhotos} alt='Mars Rover Lates Photos' />
     </div>
   )
 }

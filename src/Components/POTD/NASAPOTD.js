@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Player } from 'video-react';
+// import { Player } from 'video-react';
 import axios from 'axios';
-import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
 
 function NasaPotd() {
   const [mediaType, setMediaType] = useState('');
@@ -14,7 +12,7 @@ function NasaPotd() {
 
   useEffect(() => {
     axios
-      .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-03-02')
+      .get('https://api.nasa.gov/planetary/apod?api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8&date=2020-03-02')
       .then(response => {
         console.log(response)
         setMediaType(response.data.media_type);
@@ -34,25 +32,21 @@ function NasaPotd() {
 
       <div>
         <h2>{title}</h2>
-        <p>{date}</p>
+        <p>Date: {date}</p>
       </div>
 
       <div>
         <img src={potd} alt={'NASA Photo of the Day'}></img>
       </div>
 
-      {/* <div>
-        <Player 
-          playsInline
-          src={videoOTD}
-        />
-      </div> */}
-
       <div>
         <p>Explanation: {details}</p>
       </div>
 
-      <Footer copyright={copyright} />
+      <div>
+        <p>Copyright: {copyright}</p>
+      </div>
+
     </div>
   )
 }

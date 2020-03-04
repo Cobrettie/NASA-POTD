@@ -3,8 +3,6 @@ import { useRoutes, A } from 'hookrouter';
 import routes from '../../routes';
 import './Nav.css';
 
-import MarsRover from '../MarsRover/MarsRover';
-
 function Nav() {
   const routeResult = useRoutes(routes)
   return (
@@ -16,11 +14,7 @@ function Nav() {
         </div>
 
         <div>
-          <ul>
-            <li>
-              <A href='/MarsRover'>Mars Rover Photos</A>
-            </li>
-          </ul>
+          <h2><A href='/MarsRover'>Mars Rover Photos</A></h2>
         </div>
       </nav>
       {routeResult}

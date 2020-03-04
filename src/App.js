@@ -1,21 +1,16 @@
 import React from "react";
 import "./App.css";
 import Nav from './Components/Nav/Nav';
-import NasaPotd from './Components/POTD/NASAPOTD';
+import Footer from './Components/Footer/Footer';
 
-function App() {
+function App(props) {
+
   return (
     <div className='App'>
       <Nav />
+      <Footer />
     </div>
   )
 }
 
 export default App;
-
-
-// return (
-//     <div className="App">
-//       <NasaPotd />
-//     </div>
-//   );
