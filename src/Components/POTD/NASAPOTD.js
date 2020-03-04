@@ -5,6 +5,8 @@ function NasaPotd() {
   const [potd, setPotd] = useState();
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
+  const [details, setDetails] = useState('');
+  const [copyright, setCopyright] = useState('');
 
 
   useEffect(() => {
@@ -15,6 +17,8 @@ function NasaPotd() {
         setPotd(response.data.url);
         setTitle(response.data.title);
         setDate(response.data.date);
+        setDetails(response.data.explanation);
+        setCopyright(response.data.copyright);
       })
       .catch(err => {
         console.log(err)
@@ -26,8 +30,17 @@ function NasaPotd() {
       <h1>NASA Photo of the Day</h1>
       <h2>{title}</h2>
       <p>{date}</p>
+
       <div>
         <img src={potd} alt={'NASA Photo of the Day'}></img>
+      </div>
+
+      <div>
+        <p>{details}</p>
+      </div>
+
+      <div>
+        <p>{copyright}</p>
       </div>
     </div>
   )
