@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Player } from 'video-react';
 import axios from 'axios';
+import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
 function NasaPotd() {
@@ -36,6 +37,7 @@ function NasaPotd() {
   
   return (
     <div>
+      <Nav />
       <h2>{title}</h2>
       <p>{date}</p>
 
