@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Player } from 'video-react';
 import axios from 'axios';
+import Footer from '../Footer/Footer';
 
 function NasaPotd() {
   const [potd, setPotd] = useState();
@@ -53,9 +54,7 @@ function NasaPotd() {
         <p>{details}</p>
       </div>
 
-      <div>
-        <p>{copyright}</p>
-      </div>
+      <Footer copyright={copyright} />
     </div>
   )
 }
