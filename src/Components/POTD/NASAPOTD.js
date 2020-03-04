@@ -11,8 +11,9 @@ function NasaPotd() {
   const [copyright, setCopyright] = useState('');
 
   useEffect(() => {
+      // &date=2020-03-02
     axios
-      .get('https://api.nasa.gov/planetary/apod?api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8&date=2020-03-02')
+      .get('https://api.nasa.gov/planetary/apod?api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8')
       .then(response => {
         console.log(response)
         setMediaType(response.data.media_type);
