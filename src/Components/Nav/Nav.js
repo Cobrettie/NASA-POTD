@@ -5,7 +5,19 @@ function Nav() {
   return (
     <div>
       <nav>
-        <h1>NASA Photo of the Day</h1>
+
+        <div>
+          <h1>Astronomy Photo of the Day</h1>
+        </div>
+
+        <div>
+          <ul>
+            <li>
+              <a href='#'>Mars Rover Photos</a>
+            </li>
+          </ul>
+        </div>
+
       </nav>
     </div>
   )

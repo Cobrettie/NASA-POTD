@@ -5,6 +5,7 @@ import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
 function NasaPotd() {
+  const [mediaType, setMediaType] = useState('');
   const [potd, setPotd] = useState();
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
@@ -16,14 +17,7 @@ function NasaPotd() {
       .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-03-02')
       .then(response => {
         console.log(response)
-
-        // trying to render a video for POTD
-        // if (response.data.media_type === 'video') {
-        //   const videoOTD = setPotd(response.data.url);
-        // } else if(response.data.media_type === 'image') {
-        //   const imageOTD = setPotd(response.data.url)
-        // }
-        
+        setMediaType(response.data.media_type);
         setPotd(response.data.url);
         setTitle(response.data.title);
         setDate(response.data.date);
@@ -38,8 +32,11 @@ function NasaPotd() {
   return (
     <div>
       <Nav />
-      <h2>{title}</h2>
-      <p>{date}</p>
+
+      <div>
+        <h2>{title}</h2>
+        <p>{date}</p>
+      </div>
 
       <div>
         <img src={potd} alt={'NASA Photo of the Day'}></img>
@@ -53,7 +50,7 @@ function NasaPotd() {
       </div> */}
 
       <div>
-        <p>{details}</p>
+        <p>Explanation: {details}</p>
       </div>
 
       <Footer copyright={copyright} />
