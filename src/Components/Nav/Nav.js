@@ -1,6 +1,8 @@
 import React from 'react';
 import './Nav.css';
 
+import MarsRover from '../MarsRover/MarsRover';
+
 function Nav() {
   return (
     <div>
