@@ -31,7 +31,6 @@ function NasaPotd() {
   
   return (
     <div>
-      <Nav />
 
       <div>
         <h2>{title}</h2>
