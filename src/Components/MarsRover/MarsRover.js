@@ -10,19 +10,25 @@ const MainImg = styled.img`
   margin: 20px auto 80px;
 `;
 
+// api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8
+
 function MarsRover() {
   const [latestPhotos, setLatestPhotos] = useState();
 
+  // const allPhotos = [];
+
   useEffect(() => {
     axios
-      .get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8')
+      .get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8')
       .then(response => {
-        console.log(response)
-        setLatestPhotos(response.data.latest_photos[2].img_src)
+        // console.log(response)
+        const allPics = response.data.photos;
+        setLatestPhotos(allPics[0].img_src);
       })
+      .catch(err => console.log(err));
   }, [])
 
-  if (!latestPhotos) return <h3>Loading...</h3>
+  // if (!latestPhotos) return <h3>Loading...</h3>
 
   return (
     <div>
