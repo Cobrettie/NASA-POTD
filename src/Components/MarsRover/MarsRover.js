@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const MainTitle = styled.h1`
+  margin: 40px auto 20px;
+`;
+
+const MainImg = styled.img`
+  margin: 20px auto 80px;
+`;
 
 function MarsRover() {
   const [latestPhotos, setLatestPhotos] = useState();
@@ -17,8 +26,8 @@ function MarsRover() {
 
   return (
     <div>
-      <h1>Mars Rover Latest Photo</h1>
-      <img src={latestPhotos} alt='Mars Rover Latest Photos' />
+      <MainTitle>Mars Rover Latest Photo</MainTitle>
+      <MainImg src={latestPhotos} alt='Mars Rover Latest Photos' />
     </div>
   )
 }

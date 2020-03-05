@@ -10,16 +10,25 @@ const PageContainDiv = styled.div`
 const ImgTitle = styled.h2`
   color: #373737;
   font-size: 28px;
+  padding: 20px 0;
 `;
 
 const ImgDate = styled.p`
   color: #373737;
   font-size: 20px;
+  padding: 10px 0;
 `;
 
 const ImgDetails = styled.p`
   color: #373737;
   font-size: 20px;
+  padding: 30px 0 10px;
+`;
+
+const ImgCopyright = styled.p`
+  color: #373737;
+  font-size: 20px;
+  padding: 10px 0;
 `;
 
 function NasaPotd() {
@@ -67,7 +76,7 @@ function NasaPotd() {
       </div>
 
       <div>
-        <ImgDetails>{copyright}</ImgDetails>
+        <ImgCopyright>{copyright}</ImgCopyright>
       </div>
 
     </PageContainDiv>
