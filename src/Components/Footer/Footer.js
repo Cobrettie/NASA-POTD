@@ -7,12 +7,14 @@ const FooterDivContain = styled.div`
 
 const FooterP = styled.p`
   padding: 20px 0;
+  color: #373737;
+  font-size: 18px;
 `;
 
 function Footer(props) {
   return (
     <FooterDivContain className="footerContainer">
-      <FooterP>Cobrettie Garner - Slayin' bugs since '94</FooterP>
+      <FooterP>Cobrettie Garner - Makin' bugs since '94</FooterP>
     </FooterDivContain>
   )
 }

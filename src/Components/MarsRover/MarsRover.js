@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const MainTitle = styled.h1`
   margin: 40px auto 20px;
+  color: #373737;
 `;
 
 const MainImg = styled.img`
@@ -23,7 +24,7 @@ function MarsRover() {
       .then(response => {
         // console.log(response)
         const allPics = response.data.photos;
-        setLatestPhotos(allPics[0].img_src);
+        setLatestPhotos(allPics[4].img_src);
       })
       .catch(err => console.log(err));
   }, [])
