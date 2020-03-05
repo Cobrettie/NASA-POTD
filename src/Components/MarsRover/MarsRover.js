@@ -13,6 +13,8 @@ function MarsRover() {
       })
   }, [])
 
+  if (!latestPhotos) return <h3>Loading...</h3>
+
   return (
     <div>
       <h1>Mars Rover Photos</h1>

@@ -27,6 +27,8 @@ function NasaPotd() {
         console.log(err)
       })
   }, [])
+
+  if (!potd) return <h3>Loading...</h3>
   
   return (
     <div>
