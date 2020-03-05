@@ -17,7 +17,7 @@ function MarsRover() {
 
   return (
     <div>
-      <h1>Mars Rover Photos</h1>
+      <h1>Mars Rover Latest Photo</h1>
       <img src={latestPhotos} alt='Mars Rover Latest Photos' />
     </div>
   )

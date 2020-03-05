@@ -3,7 +3,7 @@ import React from 'react';
 function Footer(props) {
   return (
     <div className="footerContainer">
-      <p>{props.copyright}</p>
+      <p>Project by Cobrettie Garner, 2020</p>
     </div>
   )
 }

@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from 'react';
 // import { Player } from 'video-react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const PageContainDiv = styled.div`
+  margin: 0 20px;
+`;
+
+const ImgTitle = styled.h2`
+  color: #373737;
+  font-size: 28px;
+`;
+
+const ImgDate = styled.p`
+  color: #373737;
+  font-size: 20px;
+`;
+
+const ImgDetails = styled.p`
+  color: #373737;
+  font-size: 20px;
+`;
 
 function NasaPotd() {
   const [mediaType, setMediaType] = useState('');
@@ -31,11 +51,11 @@ function NasaPotd() {
   if (!potd) return <h3>Loading...</h3>
   
   return (
-    <div>
+    <PageContainDiv>
 
       <div>
-        <h2>{title}</h2>
-        <p>Date: {date}</p>
+        <ImgTitle>{title}</ImgTitle>
+        <ImgDate>Date: {date}</ImgDate>
       </div>
 
       <div>
@@ -43,14 +63,14 @@ function NasaPotd() {
       </div>
 
       <div>
-        <p>Explanation: {details}</p>
+        <ImgDetails>Explanation: {details}</ImgDetails>
       </div>
 
       <div>
-        <p>Copyright: {copyright}</p>
+        <ImgDetails>{copyright}</ImgDetails>
       </div>
 
-    </div>
+    </PageContainDiv>
   )
 }
 
