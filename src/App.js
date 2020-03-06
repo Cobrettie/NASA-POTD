@@ -14,9 +14,14 @@ const datePrefix = "&date=";
 function App() {
   const [data, setData] = useState('');
   const [dateString, setDateString] = useState('');
-  const [date, setDate] = useState('2020-02-11');
+  const [date, setDate] = useState('');
 
-  const changeDate = newDate => setDate(newDate);
+  const changeDate = newDate => {
+    return (
+      setDate(newDate),
+      console.log(newDate)
+    )
+  }
 
   const getDataFromApi = () => {
     axios
@@ -30,7 +35,7 @@ function App() {
       })
   }
 
-  useEffect(getDataFromApi, [dateString]);
+  useEffect(getDataFromApi, []);
 
   if (!data.url) return <h3>Loading...</h3>
 
@@ -38,7 +43,7 @@ function App() {
     <div className='App'>
       <Nav />
       {/* <DatePicker onChange={changeDate} value={date} /> */}
-      <DateForm />
+      <DateForm onChange={changeDate} />
       <ImageOfTheDay 
         title={data.title} 
         date={data.date} 
