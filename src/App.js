@@ -5,14 +5,16 @@ import Nav from './Components/Nav/Nav';
 import ImageOfTheDay from "./Components/ImageOfTheDay/ImageOfTheDay";
 import Footer from './Components/Footer/Footer';
 
+const apiUrl = `https://api.nasa.gov/planetary/apod`;
 const apiKey = `?api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8`;
+const datePrefix = "&date=";
 
 function App() {
   const [data, setData] = useState('');
 
   useEffect(() => {
     axios
-      .get(`https://api.nasa.gov/planetary/apod${apiKey}`)
+      .get(`${apiUrl}${apiKey}`)
       .then(response => {
         console.log(response)
         setData(response.data)
