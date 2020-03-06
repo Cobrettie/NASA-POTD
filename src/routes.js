@@ -1,9 +1,9 @@
 import React from 'react';
-import NasaPotd from './Components/POTD/NASAPOTD';
+import ImageOfTheDay from './Components/ImageOfTheDay/ImageOfTheDay';
 import MarsRover from './Components/MarsRover/MarsRover';
 
 const routes = {
-  '/': () => <NasaPotd />,
+  // '/': () => <ImageOfTheDay />,
   // '/MarsRover': () => <MarsRover />
 }
 
