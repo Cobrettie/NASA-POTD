@@ -14,7 +14,7 @@ const FooterP = styled.p`
 function Footer(props) {
   return (
     <FooterDivContain className="footerContainer">
-      <FooterP>Cobrettie Garner - Makin' bugs since '94</FooterP>
+      <FooterP>Cobrettie Garner</FooterP>
     </FooterDivContain>
   )
 }

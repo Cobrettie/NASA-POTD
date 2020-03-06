@@ -4,7 +4,7 @@ import MarsRover from './Components/MarsRover/MarsRover';
 
 const routes = {
   '/': () => <NasaPotd />,
-  '/MarsRover': () => <MarsRover />
+  // '/MarsRover': () => <MarsRover />
 }
 
 export default routes;
