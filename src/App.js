@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
-// import DatePicker from 'react-date-picker';
+import DatePicker from 'react-date-picker';
 import "./App.css";
 import Nav from './Components/Nav/Nav';
 import DateForm from './Components/DateForm/DateForm';
@@ -11,17 +11,20 @@ const apiUrl = `https://api.nasa.gov/planetary/apod`;
 const apiKey = `?api_key=3fPvhYJW8mvE0coCgyI0w38ZvEu44AGx5ay2Qum8`;
 const datePrefix = "&date=";
 
+// function DateSelector(props) {
+//   return (
+//     <DatePicker 
+//       selected={props.selected}
+//       onChange={props.dateFunction}
+//     />
+//   )
+// }
+
 function App() {
   const [data, setData] = useState('');
   const [dateString, setDateString] = useState('');
-  const [date, setDate] = useState('');
-
-  const changeDate = newDate => {
-    return (
-      setDate(newDate),
-      console.log(newDate)
-    )
-  }
+  const [startDate, setStartDate] = useState('');
+  // const [date, setDate] = useState('');
 
   const getDataFromApi = () => {
     axios
@@ -42,8 +45,10 @@ function App() {
   return (
     <div className='App'>
       <Nav />
-      {/* <DatePicker onChange={changeDate} value={date} /> */}
-      <DateForm onChange={changeDate} />
+      {/* <DateSelector 
+        dateFunction={(date) => setStartDate(date)}
+        selected={startDate}
+      /> */}
       <ImageOfTheDay 
         title={data.title} 
         date={data.date} 
